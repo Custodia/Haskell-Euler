@@ -33,6 +33,3 @@ allSums list = (map (\x -> (head list) + x) list) ++ (allSums (tail list))
 doubleAbundant = filter (< 20162) $ allSums abundantNums
 
 solution = filter (\x -> not (elem x doubleAbundant)) [1..20161]
-
-
--- There seems to be 4994 abundant numbers
