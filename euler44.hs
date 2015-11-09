@@ -8,6 +8,7 @@ isPentagonal n = n == (head $ dropWhile (<n) pentagonalNums)
 
 recursion :: Int -> Int -> Int
 recursion j k
+    | minus < 0 = error "Shouldn't be negative"
 	| j == k = recursion 1 (k+1)
     | isPentagonal minus && isPentagonal plus = minus
 	| otherwise = recursion (j + 1) k
@@ -15,3 +16,5 @@ recursion j k
 	      pentK = pentagonalNums !! (k - 1)
 	      minus = pentK - pentJ
 	      plus  = pentJ + pentK
+
+solution = recursion 1 1
