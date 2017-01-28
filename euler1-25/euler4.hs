@@ -7,3 +7,8 @@ paliProducts = [x * y | x <- [100..999], y <- [100..x], checkPal (x * y)]
 
 -- Choose the biggest one.
 biggestPaliProduct = maximum paliProducts
+
+main = do
+  let result = show biggestPaliProduct
+  putStrLn result
+  return 0
